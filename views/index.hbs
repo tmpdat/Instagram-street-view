@@ -245,7 +245,7 @@
         $('#divButtonPages').on('click', '.page', function () {
             var lat = $('#divButtonPages .nav').data("lat");
             var lng = $('#divButtonPages .nav').data("lng");
-            var url = "http://localhost:3000/api/media/search?page=" + $(this).data("index") + "&lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
+            var url = "/api/media/search?page=" + $(this).data("index") + "&lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
@@ -364,7 +364,7 @@
             });
             var lat = $(this).data("lat");
             var lng = $(this).data("lng");
-            var url = "http://localhost:3000/api/media/search?lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
+            var url = "/api/media/search?lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
@@ -377,7 +377,7 @@
         });
 
         function SearchLocationNearly(position) {
-            var url = "http://localhost:3000/api/locations/search?lat=" + position.lat() + "&lng=" + position.lng() + "&access_token=" + access_token;
+            var url = "/api/locations/search?lat=" + position.lat() + "&lng=" + position.lng() + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
