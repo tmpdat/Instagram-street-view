@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6764c95a-93c9-4ddd-bd18-12e73e2eb6fa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,17 +16,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
+            <state relative-caret-position="494">
+              <caret line="371" column="33" lean-forward="true" selection-start-line="371" selection-start-column="33" selection-end-line="371" selection-end-column="33" />
               <folding>
                 <element signature="e#9400#11348#0#HTML" expanded="false" />
                 <element signature="e#11386#13150#0#HTML" expanded="false" />
-                <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-                <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-                <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
+                <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+                <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+                <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
               </folding>
             </state>
           </provider>
@@ -52,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -153,6 +153,7 @@
       <find>video</find>
       <find>url</find>
       <find>api</find>
+      <find>/api</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -282,12 +283,12 @@
       <workItem from="1508595574272" duration="23891000" />
       <workItem from="1508634925383" duration="12584000" />
       <workItem from="1508657559446" duration="1530000" />
-      <workItem from="1508659488533" duration="1226000" />
+      <workItem from="1508659488533" duration="1447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123276000" />
+    <option name="totallyTimeSpent" value="123497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -300,7 +301,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18912882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -387,9 +387,9 @@
           <folding>
             <element signature="e#9400#11348#0#HTML" expanded="false" />
             <element signature="e#11386#13150#0#HTML" expanded="false" />
-            <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
           </folding>
         </state>
       </provider>
@@ -465,9 +465,9 @@
           <folding>
             <element signature="e#9400#11348#0#HTML" expanded="false" />
             <element signature="e#11386#13150#0#HTML" expanded="false" />
-            <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
           </folding>
         </state>
       </provider>
@@ -543,9 +543,9 @@
           <folding>
             <element signature="e#9400#11348#0#HTML" expanded="false" />
             <element signature="e#11386#13150#0#HTML" expanded="false" />
-            <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
           </folding>
         </state>
       </provider>
@@ -613,9 +613,9 @@
           <folding>
             <element signature="e#9400#11348#0#HTML" expanded="false" />
             <element signature="e#11386#13150#0#HTML" expanded="false" />
-            <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
           </folding>
         </state>
       </provider>
@@ -740,20 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="124" column="24" lean-forward="true" selection-start-line="124" selection-start-column="24" selection-end-line="124" selection-end-column="24" />
-          <folding>
-            <element signature="e#9400#11348#0#HTML" expanded="false" />
-            <element signature="e#11386#13150#0#HTML" expanded="false" />
-            <marker date="1508660000662" expanded="true" signature="13279:13314" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13279:13348" ph="..." />
-            <marker date="1508660000662" expanded="true" signature="13557:13586" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -767,6 +753,20 @@
         <state relative-caret-position="100">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="371" column="33" lean-forward="true" selection-start-line="371" selection-start-column="33" selection-end-line="371" selection-end-column="33" />
+          <folding>
+            <element signature="e#9400#11348#0#HTML" expanded="false" />
+            <element signature="e#11386#13150#0#HTML" expanded="false" />
+            <marker date="1508661055606" expanded="true" signature="13279:13314" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13279:13348" ph="..." />
+            <marker date="1508661055606" expanded="true" signature="13557:13586" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
