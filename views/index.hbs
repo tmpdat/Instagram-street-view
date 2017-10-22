@@ -122,6 +122,7 @@
         var marker;
         var list_media;
         var curMediaIndex = 0;
+        var domain = "http://instagramstreetview.herokuapp.com";
         function initMap()
         {
             map = new google.maps.Map(document.getElementById('map'), {
@@ -245,7 +246,7 @@
         $('#divButtonPages').on('click', '.page', function () {
             var lat = $('#divButtonPages .nav').data("lat");
             var lng = $('#divButtonPages .nav').data("lng");
-            var url = "api/media/search?page=" + $(this).data("index") + "&lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
+            var url = domain + "/api/media/search?page=" + $(this).data("index") + "&lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
@@ -364,7 +365,7 @@
             });
             var lat = $(this).data("lat");
             var lng = $(this).data("lng");
-            var url = "api/media/search?lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
+            var url = doamin + "/api/media/search?lat=" + lat + "&lng=" + lng + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
@@ -377,7 +378,7 @@
         });
 
         function SearchLocationNearly(position) {
-            var url = "api/locations/search?lat=" + position.lat() + "&lng=" + position.lng() + "&access_token=" + access_token;
+            var url = domain + "/api/locations/search?lat=" + position.lat() + "&lng=" + position.lng() + "&access_token=" + access_token;
             $.ajax({
                 type: 'get',
                 url: url,
