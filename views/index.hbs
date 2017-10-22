@@ -438,10 +438,10 @@
                     "  </a>\n";
             output += "</div>\n";
             var sec = "#large-media li[data-slide-to=\"" + curMediaIndex + "\"]";
+            $('#large-media').html(output);
             $(sec).css({
                 "background-color": "#286090"
             });
-            $('#large-media').html(output);
             $("#large-media").dialog('open');
         });
 
