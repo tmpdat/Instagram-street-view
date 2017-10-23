@@ -466,6 +466,7 @@
             });
             curMediaIndex = $(this).data("slide-to");
             var caption = list_media[curMediaIndex].caption;
+            SetTitleDlg(caption);
         });
 
         $('#large-media').on('click', 'a', function () {
