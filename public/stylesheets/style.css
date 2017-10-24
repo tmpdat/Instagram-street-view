@@ -54,7 +54,16 @@ a {
   background-color: rgba(249,255,149,0.02);
 }
 
-#large-media  video, #large-media img .d-block{
+#large-media  video {
+  height: auto;
+  max-height: 450px;
+  width: 100%;
+  max-width: 660px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
+#large-media img .d-block {
   height: auto;
   max-height: 490px;
   width: 100%;

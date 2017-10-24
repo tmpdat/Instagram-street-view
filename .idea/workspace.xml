@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6764c95a-93c9-4ddd-bd18-12e73e2eb6fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/logo-ins.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/instagram.js" afterPath="$PROJECT_DIR$/routes/api/instagram.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.hbs" afterPath="$PROJECT_DIR$/views/index.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.hbs" afterPath="$PROJECT_DIR$/views/layout.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="367" column="33" lean-forward="true" selection-start-line="367" selection-start-column="33" selection-end-line="367" selection-end-column="33" />
+            <state relative-caret-position="214">
+              <caret line="362" column="62" lean-forward="true" selection-start-line="362" selection-start-column="62" selection-end-line="362" selection-end-column="62" />
               <folding>
                 <element signature="e#9602#11342#0#HTML" expanded="false" />
                 <element signature="e#11383#12416#0#HTML" expanded="false" />
@@ -64,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -178,8 +174,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/layout.hbs" />
         <option value="$PROJECT_DIR$/routes/api/instagram.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/views/index.hbs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
       </list>
     </option>
   </component>
@@ -318,7 +314,7 @@
       <workItem from="1508741432616" duration="545000" />
       <workItem from="1508742210021" duration="780000" />
       <workItem from="1508811720407" duration="13370000" />
-      <workItem from="1508839939085" duration="3219000" />
+      <workItem from="1508839939085" duration="3454000" />
     </task>
     <task id="LOCAL-00001" summary="Fix fuction show detail media">
       <created>1508742861229</created>
@@ -341,11 +337,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508818837576</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add button View on Instagram">
+      <created>1508843252836</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1508843252836</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148360000" />
+    <option name="totallyTimeSpent" value="148595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,7 +392,8 @@
     <MESSAGE value="Fix fuction show detail media" />
     <MESSAGE value="Fix UI&#10;Adjust height and width main contain for fitting the window" />
     <MESSAGE value="Fix UI(2)&#10;Adjust height and width main contain for fitting the window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix UI(2)&#10;Adjust height and width main contain for fitting the window" />
+    <MESSAGE value="Add button View on Instagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add button View on Instagram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -800,14 +804,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -826,8 +822,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="367" column="33" lean-forward="true" selection-start-line="367" selection-start-column="33" selection-end-line="367" selection-end-column="33" />
+        <state relative-caret-position="214">
+          <caret line="362" column="62" lean-forward="true" selection-start-line="362" selection-start-column="62" selection-end-line="362" selection-end-column="62" />
           <folding>
             <element signature="e#9602#11342#0#HTML" expanded="false" />
             <element signature="e#11383#12416#0#HTML" expanded="false" />
@@ -841,6 +837,14 @@
             <marker date="1508842400267" expanded="true" signature="11887:11897" ph="..." />
             <marker date="1508842400267" expanded="true" signature="11887:11901" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
