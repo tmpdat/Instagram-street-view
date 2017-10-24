@@ -1,22 +1,22 @@
-<div class="container-fluid" style="background-color: #985f0d; position: absolute; left: 0px; top: 0px; right: 0px">
+<div id="main-page" class="container-fluid" style="background-color: #985f0d; position: absolute; left: 0px; top: 0px; right: 0px">
     <div class="row">
-        <div class="col-sm-4 col-lg-4" style="background-color: #0f0f0f">
+        <div class="col-sm-4 col-lg-4 col-md-4" style="background-color: #0f0f0f">
             <div id="divMap">
                 <form class="input-group ml-0" style="margin: 0px">
-                    <input class="form-control my-1 mx-0" type="text" placeholder="Search" id="txtSearch">
+                    <input class="form-control my-0 ml-0" type="text" placeholder="Search" id="txtSearch">
                     </input>
-                    <button class="btn btn-sm btn-default mx-0 mt-1" id="btnSearch">
+                    <button class="btn btn-sm btn-default ml-1 my-0" id="btnSearch">
                         <span>
-                            <img src="/images/search.png" width="25" height="27">
+                            <img src="/images/search.png" width="25" height="25">
                         </span>
                     </button>
                 </form>
                 <div id="map" class="embed-responsive embed-responsive-16by9 bounded border border-secondary"></div>
             </div>
         </div>
-        <div class="bounded border border-secondary contain col-sm-8 col-lg-8" style="background-color: #cd6b17">
+        <div class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #cd6b17">
             <div class="row">
-                <div class="col-sm-8 col-lg-8">
+                <div class="col-sm-8 col-lg-8 col-md-8" id="divShowMedias">
                     <div class="row">
                         <div>
                             <img src="/images/logo-instagram.png" width="" height="100" style="margin-left: 30px; margin-top: 0px;">
@@ -28,10 +28,8 @@
 
                     </div>
                 </div>
-                <div class="col-sm-4 col-lg-4">
-                    <div class="row">
-                        <div class="bounded" id="divShowLocations" style="margin-top: 1px; min-height: 500px">
-                        </div>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="bounded" id="divShowLocations" style="margin-top: 1px;">
                     </div>
                 </div>
             </div>
@@ -44,15 +42,13 @@
 
 {{#section 'css'}}
     <style>
-        #map {
-            height: 640px;
-            width: 435px;
-            margin: 1px;
-        }
-
         .page {
             background-color: #3c3c3c;
             color: white;
+        }
+
+        #btnSearch:hover {
+            background-color: #9acfea;
         }
 
         #divListMedias nav {
@@ -157,11 +153,8 @@
                 types: ['geocode'],
             };
             var input = document.getElementById('txtSearch');
-            var btnSearch = document.getElementById('btnSearch');
             autocomplete = new google.maps.places.Autocomplete(input, options);
             var searchBox = new google.maps.places.SearchBox(input);
-            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(btnSearch);
             map.addListener('bounds_changed', function() {
                 searchBox.setBounds(map.getBounds());
             });
@@ -344,7 +337,7 @@
             var output = "<div class=\"list-group-item list-group-item-info\" style=\'background-color: rgba(0,0,0,0.82); color: #286090; font-weight: bold\'>\n" +
                     "                        List of locations\n" +
                     "                    </div>\n" +
-                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: 589px; overflow: auto\">\n";
+                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: " + ($("#divMap").height() - 60) + "px; overflow: auto; margin-bottom: \">\n";
             rs.data.forEach(function (item) {
                 output += "<button class=\"list-group-item list-group-item-action location\" data-lat=\"" + item.latitude +"\" data-lng=\"" + item.longitude + "\">\n" +
                         item.name + "\n" +
@@ -491,6 +484,12 @@
         } );
 
         $(document).ready(function () {
+            $("#main-page").height($(window).height());
+            $("#main-page").width($(window).width() - 30);
+            $("#map").height($(window).height() - 40);
+            $("#map").width(($(window).width() * 1 / 3) - 30);
+            $("#divShowMedias").height($(window).height() - 40);
+            $("#divShowMedias").width(($(window).width() * 1 / 3) - 30);
             $( function() {
                 $("#large-media").dialog({
                     resizable: false,
