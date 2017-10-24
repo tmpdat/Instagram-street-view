@@ -21,17 +21,9 @@ a {
   background-color: #9acfea;
 }
 
-#divListMedias nav {
-  margin: 15px;
-}
-
 #divListMedias .media {
-  height: 100%;
-  max-height: 130px;
-  width: auto;
-  max-width: 190px;
-  display: block;
-  margin: auto;
+  height: 190px;
+  width: 190px;
 }
 
 #divShowMedias {
@@ -48,7 +40,7 @@ a {
 }
 
 #divListMedias div.frame {
-  height: 130px;
+  height: 190px;
   width: 190px;
   margin: 10px;
   display: block;
@@ -57,26 +49,22 @@ a {
 
 #large-media  video {
   height: auto;
-  max-height: 450px;
+  max-height: 550px;
   width: 100%;
   max-width: 700px;
   margin: auto;
   display: block;
-  margin-top: 20px;
 }
-#large-media img .d-block {
+#large-media img.main {
   height: auto;
-  max-height: 500px;
   width: 100%;
+  max-height: 550px;
   max-width: 700px;
   margin: auto;
   display: block;
-  margin-top: 20px;
 }
 
 #large-media .carousel-inner {
-  height: 490px;
-  width: 660px;
   margin: auto;
   display: block;
   background-color: rgba(0,0,0,0.72);
@@ -97,4 +85,8 @@ a {
 #large-media a {
   height: 50px;
   margin: auto;
+}
+
+#large-media button.btn {
+  margin: 5px;
 }

@@ -25,7 +25,7 @@ router.get('/locations/search', function(req, res, next) {
 });
 
 router.get('/media/search', function(req, res, next) {
-    var rec_per_page = 12;
+    var rec_per_page = 8;
     var lat = req.query.lat;
     var lng = req.query.lng;
     // lng= 2.294351;

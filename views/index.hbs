@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-4 col-lg-4 col-md-4" style="background-color: #0f0f0f;">
             <div class="row">
-                <div class="input-group">
+                <div class="input-group" style="margin-left: 15px">
                     <input class="form-control" type="text" placeholder="Search" id="txtSearch">
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-light" id="btnSearch">
@@ -15,7 +15,7 @@
                 <div id="map" class="figure-img img-fluid rounded"></div>
             </div>
         </div>
-        <div id="main-content" class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #cd6b17">
+        <div id="main-content" class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #ca540d">
             <div class="row">
                 <div class="" id="divShowMedias">
                     <div class="row">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="row" id="divListMedias">
                     </div>
-                    <div class="row" id="divButtonPages" style="position: absolute; bottom: 2px; left: 40%">
+                    <div class="row" id="divButtonPages" style="position: absolute; bottom: 2px; left: 38%">
 
                     </div>
                 </div>
@@ -67,6 +67,10 @@
             });
 
             map.addListener('click', function(e) {
+                if(marker)
+                {
+                    marker.setMap(null);
+                }
                 marker = new google.maps.Marker({
                     map: map,
                     position: e.latLng
@@ -224,10 +228,10 @@
         }
 
         function ShowListMedias(rs) {
-            var output = "<nav class=\"navbar navbar-dark bg-dark\">";
+            var output = "";
             list_media = rs.data.list;
             rs.data.list.forEach(function (item, index) {
-                var src = item.images.thumbnail.url;
+                var src = item.images.standard_resolution.url;
                 var caption = "";
                 if(item.caption)
                     caption = item.caption.text;
@@ -235,7 +239,7 @@
                 var col = "col-sm-offset-" + offset;
                 if(item.type == 'video')
                 {
-                    src = item.videos.thumbnail.url;
+                    src = item.videos.standard_resolution.url;
                     output += "<div class=\"col-sm-3 col-lg-3\">\n" +
                             "<div class=\"frame\">\n" +
                             "<video allowfullscreen=\"true\" class=\"media\" controls>\n" +
@@ -255,7 +259,6 @@
                             "</div>\n";
                 }
             });
-            output += "</nav>";
             $('#divListMedias').html(output);
             //list page button
             var output = createListPageButtons(rs);
@@ -276,12 +279,22 @@
             output += "\n</div>\n</div>\n";
             $('#divShowLocations').html(output);
             $('#divShowLocations #btnListOfLocations').trigger("click");
+            $("#divButtonPages").hide();
         }
+
+        $('#divShowLocations').on('click', '#btnListOfLocations', function () {
+            if($("#divButtonPages").is(":visible"))
+                $("#divButtonPages").hide();
+            else
+                $("#divButtonPages").show();
+        });
+
         var prevItem;
         var prevLi;
 
         $('#divShowLocations').on('click', '.location', function () {
             $('#divShowLocations #btnListOfLocations').trigger("click");
+            $("#divButtonPages").show();
             if(prevItem)
                 prevItem.css({
                     "background-color": "",
@@ -330,8 +343,8 @@
             var i = $(this).data('index');
             curMediaIndex = i;
             SetTitleDlg(list_media[curMediaIndex].caption);
-            var output = "<div id=\"scroll_list\" class=\"carousel slide\" data-ride=\"carousel\">\n" +
-                    "<ol class=\"carousel-indicators\">\n";
+            var output = "<div id=\"scroll_list\" class=\"carousel slide\" data-ride=\"carousel\">\n";
+            output += "<ol class=\"carousel-indicators\">\n";
             list_media.forEach(function (item, index) {
                 if(index == i)
                 {
@@ -344,11 +357,11 @@
             output += "<div class=\"carousel-inner\">\n";
             list_media.forEach(function (item, index) {
                 var src = item.images.standard_resolution.url;
-                var tag = "<img class=\"d-block w-100\" data-caption=\"" + caption + "\" src=\"" + src + "\">\n";
+                var tag = "<img class='main' data-caption=\"" + caption + "\" src=\"" + src + "\">\n";
                 if(item.type == 'video')
                 {
                     src = item.videos.standard_resolution.url;
-                    tag = "<video allowfullscreen=\"true\" data-caption=\"" + caption + "\" class=\"d-block w-100\" controls>\n" +
+                    tag = "<video allowfullscreen=\"true\" data-caption=\"" + caption + "\" controls>\n" +
                             "<source src=\"" + src + "\" type=\"video/mp4\">\n" +
                             "</video>\n";
                 }
@@ -357,14 +370,14 @@
                 {
                     output += "<div class=\"carousel-item active\" title=\"" + caption + "\">\n" +
                             "<a href=\"" + item.link + "\">" +
-                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img height=\"20\" width=\"20\" src=\"/images/logo-ins.png\">View on Instagram</button></a>" + tag +
+                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img height=\"20\" width=\"20\" src=\"/images/logo-ins.png\"> On Instagram</button></a>" + tag +
                             "    </div>\n";
                 }
                 else
                 {
                     output += "<div class=\"carousel-item\" title=\"" + caption + "\">\n" +
                             "<a href=\"" + item.link + "\">" +
-                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img src=\"/images/logo-ins.png\" height='20' width='20'>View on Instagram</button></a>" + tag +
+                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img src=\"/images/logo-ins.png\" height='20' width='20'> On Instagram</button></a>" + tag +
                             "    </div>\n";
                 }
             });
@@ -395,6 +408,12 @@
             });
             curMediaIndex = $(this).data("slide-to");
             var caption = list_media[curMediaIndex].caption;
+            if(list_media[curMediaIndex].type == 'video')
+            {
+                $("#large-media .carousel-indicators").hide();
+            }
+            else
+                $("#large-media .carousel-indicators").show();
             SetTitleDlg(caption);
         });
 
@@ -412,6 +431,12 @@
                 "background-color": "#286090"
             });
             var caption = list_media[curMediaIndex].caption;
+            if(list_media[curMediaIndex].type == 'video')
+            {
+                $("#large-media .carousel-indicators").hide();
+            }
+            else
+                $("#large-media .carousel-indicators").show();
             SetTitleDlg(caption);
         });
 
@@ -433,9 +458,9 @@
             $( function() {
                 $("#large-media").dialog({
                     resizable: false,
-                    height: 550,
+                    height: 650,
+                    width: 800,
                     modal: false,
-                    width: 700,
                     autoOpen: false,
                     hide: { effect: "fade", duration: 600 },
                     show: { effect: "blind", duration: 600 },
