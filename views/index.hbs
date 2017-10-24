@@ -1,30 +1,31 @@
-<div id="main-page" class="container-fluid" style="background-color: #985f0d; position: absolute; left: 0px; top: 0px; right: 0px">
+<div id="main-page" class="container-fluid" style="background-color: #3c3c3c; position: absolute; left: 0px; top: 0px; right: 0px">
     <div class="row">
         <div class="col-sm-4 col-lg-4 col-md-4" style="background-color: #0f0f0f">
-            <div id="divMap">
-                <form class="input-group ml-0" style="margin: 0px">
-                    <input class="form-control my-0 ml-0" type="text" placeholder="Search" id="txtSearch">
-                    </input>
-                    <button class="btn btn-sm btn-default ml-1 my-0" id="btnSearch">
-                        <span>
+            <div class="row">
+                <div class="input-group" style="margin: 5px">
+                    <input class="form-control" type="text" placeholder="Search" id="txtSearch">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-light" id="btnSearch">
                             <img src="/images/search.png" width="25" height="25">
-                        </span>
-                    </button>
-                </form>
-                <div id="map" class="embed-responsive embed-responsive-16by9 bounded border border-secondary"></div>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div id="divMap" class="row figure" style="margin: 0px">
+                <div id="map" class="figure-img img-fluid rounded"></div>
             </div>
         </div>
-        <div class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #cd6b17">
+        <div id="main-content" class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #cd6b17">
             <div class="row">
                 <div class="col-sm-8 col-lg-8 col-md-8" id="divShowMedias">
                     <div class="row">
                         <div>
-                            <img src="/images/logo-instagram.png" width="" height="100" style="margin-left: 30px; margin-top: 0px;">
+                            <img src="/images/logo-instagram.png" width="" height="100" style="margin: 1px">
                         </div>
                     </div>
-                    <div class="row" id="divListMedias" style="margin-top: 1px; min-height: 460px">
+                    <div class="row" id="divListMedias" style="">
                     </div>
-                    <div class="row" id="divButtonPages" style="margin: 10px; margin-left: 160px">
+                    <div class="row" id="divButtonPages" style="margin: 10px; left: 50%">
 
                     </div>
                 </div>
@@ -65,6 +66,14 @@
             margin: auto;
         }
 
+        #divShowMedias {
+            margin: 0;
+        }
+
+        #divMap {
+            margin: 0;
+        }
+
         #divListMedias div:hover {
             background-color: rgba(8,7,10,0.09);
         }
@@ -74,7 +83,7 @@
             width: 160px;
             margin: 10px;
             display: block;
-            background-color: rgba(19,205,194,0.05);
+            background-color: rgba(249,255,149,0.02));
         }
 
         #large-media  video, #large-media img{
@@ -295,7 +304,7 @@
         }
 
         function ShowListMedias(rs) {
-            var output = "<nav class=\"navbar navbar-light bg-light\">";
+            var output = "<nav class=\"navbar navbar-dark bg-dark\">";
             list_media = rs.data.list;
             rs.data.list.forEach(function (item, index) {
                 var src = item.images.standard_resolution.url;
@@ -337,7 +346,7 @@
             var output = "<div class=\"list-group-item list-group-item-info\" style=\'background-color: rgba(0,0,0,0.82); color: #286090; font-weight: bold\'>\n" +
                     "                        List of locations\n" +
                     "                    </div>\n" +
-                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: " + ($("#divMap").height() - 60) + "px; overflow: auto; margin-bottom: \">\n";
+                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: " + ($("#main-content").height() - 50) + "px; overflow: auto; margin-bottom: \">\n";
             rs.data.forEach(function (item) {
                 output += "<button class=\"list-group-item list-group-item-action location\" data-lat=\"" + item.latitude +"\" data-lng=\"" + item.longitude + "\">\n" +
                         item.name + "\n" +
@@ -485,11 +494,13 @@
 
         $(document).ready(function () {
             $("#main-page").height($(window).height());
-            $("#main-page").width($(window).width() - 30);
-            $("#map").height($(window).height() - 40);
-            $("#map").width(($(window).width() * 1 / 3) - 30);
-            $("#divShowMedias").height($(window).height() - 40);
-            $("#divShowMedias").width(($(window).width() * 1 / 3) - 30);
+            $("#main-page").width($(window).width());
+            $("#map").height($(window).height() - 60);
+            $("#map").width(($(window).width() * 1 / 3));
+            $("#main-content").width(($(window).width() * 2 / 3));
+            $("#main-content").height($(window).height());
+            $("#divShowMedias").height($(window).height());
+            $("#divShowMedias").width(($(window).width() * 2 / 3));
             $( function() {
                 $("#large-media").dialog({
                     resizable: false,
