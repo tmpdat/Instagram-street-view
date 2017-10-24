@@ -1,5 +1,5 @@
-<div id="main-page" class="container-fluid" style="background-color: #3c3c3c; position: absolute; left: 0px; top: 0px; right: 0px">
-    <div class="row">
+<div id="main-page" class="container-fluid" style="background-color: #3c3c3c; bottom: 0px; padding: 0px">
+    <div class="row" style="padding: 0">
         <div class="col-sm-4 col-lg-4 col-md-4" style="background-color: #0f0f0f">
             <div class="row">
                 <div class="input-group" style="margin: 5px">
@@ -17,112 +17,29 @@
         </div>
         <div id="main-content" class="bounded border border-secondary contain col-sm-8 col-lg-8 col-md-8" style="background-color: #cd6b17">
             <div class="row">
-                <div class="col-sm-8 col-lg-8 col-md-8" id="divShowMedias">
+                <div class="" id="divShowMedias">
                     <div class="row">
-                        <div>
+                        <div class="col-sm-7">
                             <img src="/images/logo-instagram.png" width="" height="100" style="margin: 1px">
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="bounded" id="divShowLocations" style="margin-top: 20px;">
+                            </div>
                         </div>
                     </div>
                     <div class="row" id="divListMedias" style="">
                     </div>
-                    <div class="row" id="divButtonPages" style="margin: 10px; left: 50%">
+                    <div class="row" id="divButtonPages" style="margin: 10px; left: 60%">
 
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="bounded" id="divShowLocations" style="margin-top: 1px;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="large-media" style="background-color: black">
-
-    </div>
 </div>
+<div id="large-media" style="background-color: black">
 
-{{#section 'css'}}
-    <style>
-        .page {
-            background-color: #3c3c3c;
-            color: white;
-        }
-
-        #btnSearch:hover {
-            background-color: #9acfea;
-        }
-
-        #divListMedias nav {
-            min-width: 600px;
-            margin: 1px;
-        }
-
-        #divListMedias .media {
-            height: 100%;
-            max-height: 130px;
-            width: auto;
-            max-width: 160px;
-            display: block;
-            margin: auto;
-        }
-
-        #divShowMedias {
-            margin: 0;
-        }
-
-        #divMap {
-            margin: 0;
-        }
-
-        #divListMedias div:hover {
-            background-color: rgba(8,7,10,0.09);
-        }
-
-        #divListMedias div.frame {
-            height: 130px;
-            width: 160px;
-            margin: 10px;
-            display: block;
-            background-color: rgba(249,255,149,0.02));
-        }
-
-        #large-media  video, #large-media img{
-            height: auto;
-            max-height: 490px;
-            width: 100%;
-            max-width: 660px;
-            margin: auto;
-            display: block;
-            margin-top: 20px;
-        }
-
-        #large-media .carousel-inner {
-            height: 490px;
-            width: 660px;
-            margin: auto;
-            display: block;
-            background-color: rgba(0,0,0,0.72);
-        }
-
-        #large-media li {
-            margin-top: 20px;
-            height: 20px;
-            width: 50px;
-            display: block;
-            background-color: #3c3c3c;
-        }
-
-        #large-media li:hover {
-            background-color: #286090;
-        }
-
-        #large-media a {
-            height: 50px;
-            margin: auto;
-        }
-
-    </style>
-{{/section}}
+</div>
 
 {{#section 'js'}}
     <script>
@@ -316,7 +233,7 @@
                 if(item.type == 'video')
                 {
                     src = item.videos.standard_resolution.url;
-                    output += "<div class=\"col-sm-4 col-lg-4\">\n" +
+                    output += "<div class=\"col-sm-3 col-lg-3\">\n" +
                             "<div class=\"frame\">\n" +
                             "<video allowfullscreen=\"true\" class=\"media\" controls>\n" +
                             "<source src=\"" + src + "\" type=\"video/mp4\" data-index=\"" + index + "\">\n" +
@@ -326,7 +243,7 @@
                 }
                 else
                 {
-                    output += "<div class=\"col-sm-4 col-lg-4\">\n" +
+                    output += "<div class=\"col-sm-3 col-lg-3\">\n" +
                             "<div type=\"button\" class=\"frame\">\n" +
                             "<img src=\"" + src + "\" class=\"media\" data-src=\""
                             + src + "\" data-index=\""
@@ -343,22 +260,25 @@
         }
 
         function ShowListLocations(rs) {
-            var output = "<div class=\"list-group-item list-group-item-info\" style=\'background-color: rgba(0,0,0,0.82); color: #286090; font-weight: bold\'>\n" +
-                    "                        List of locations\n" +
-                    "                    </div>\n" +
-                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: " + ($("#main-content").height() - 50) + "px; overflow: auto; margin-bottom: \">\n";
+            var output = "<button style='margin-top: 20px;' id='btnListOfLocations' type=\"button\" class=\"btn btn-dark\" data-toggle=\"collapse\" aria-expanded=\"true\" data-target=\"#list\">\n" +
+                    "      <span class=\"\"></span>List of locations\n" +
+                    "    </button>\n" +
+                    "<div class='collapse' id='list'>" +
+                    "<div class=\"list-group\" id=\"divListLocations\" style=\"height: " + ($("#main-content").height()- 80) + "px; overflow: auto;\">\n";
             rs.data.forEach(function (item) {
                 output += "<button class=\"list-group-item list-group-item-action location\" data-lat=\"" + item.latitude +"\" data-lng=\"" + item.longitude + "\">\n" +
                         item.name + "\n" +
                         "                    </button>";
             });
-            output += "\n</div>";
+            output += "\n</div>\n</div>\n";
             $('#divShowLocations').html(output);
+            $('#divShowLocations #btnListOfLocations').trigger("click");
         }
         var prevItem;
         var prevLi;
 
         $('#divShowLocations').on('click', '.location', function () {
+            $('#divShowLocations #btnListOfLocations').trigger("click");
             if(prevItem)
                 prevItem.css({
                     "background-color": "",
@@ -397,7 +317,7 @@
         }
 
         function SetTitleDlg(caption) {
-            if(caption)
+            if (caption)
                 $("#large-media").dialog("option", "title", caption.text);
             else
                 $("#large-media").dialog("option", "title", "No caption");
@@ -432,12 +352,16 @@
                 var caption = item.caption ? item.caption.text:"No caption";
                 if(index == i)
                 {
-                    output += "<div class=\"carousel-item active\" title=\"" + caption + "\">\n" + tag +
+                    output += "<div class=\"carousel-item active\" title=\"" + caption + "\">\n" +
+                            "<a href=\"" + item.link + "\">" +
+                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img height=\"20\" width=\"20\" src=\"/images/logo-ins.png\">View on Instagram</button></a>" + tag +
                             "    </div>\n";
                 }
                 else
                 {
-                    output += "<div class=\"carousel-item\" type=\'button\' title=\"" + caption + "\">\n" + tag +
+                    output += "<div class=\"carousel-item\" title=\"" + caption + "\">\n" +
+                            "<a href=\"" + item.link + "\">" +
+                            "<button type=\"button\" class=\"btn btn-sm btn-light\"><img src=\"/images/logo-ins.png\" height='20' width='20'>View on Instagram</button></a>" + tag +
                             "    </div>\n";
                 }
             });

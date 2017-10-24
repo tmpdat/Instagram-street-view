@@ -1,8 +1,90 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 a {
   color: #00B7FF;
+}
+
+.page {
+  background-color: #3c3c3c;
+  color: white;
+}
+
+#btnSearch:hover {
+  background-color: #9acfea;
+}
+
+#divListMedias nav {
+  margin: 1px;
+}
+
+#divListMedias .media {
+  height: 100%;
+  max-height: 140px;
+  width: auto;
+  max-width: 190px;
+  display: block;
+  margin: auto;
+}
+
+#divShowMedias {
+  margin: 0;
+}
+
+#divMap {
+  margin: 0;
+}
+
+#divListMedias div:hover {
+  background-color: rgba(8,7,10,0.09);
+}
+
+#divListMedias div.frame {
+  height: 140px;
+  width: 190px;
+  margin: 10px;
+  display: block;
+  background-color: rgba(249,255,149,0.02);
+}
+
+#large-media  video, #large-media img .d-block{
+  height: auto;
+  max-height: 490px;
+  width: 100%;
+  max-width: 660px;
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+}
+
+#large-media .carousel-inner {
+  height: 490px;
+  width: 660px;
+  margin: auto;
+  display: block;
+  background-color: rgba(0,0,0,0.72);
+}
+
+#large-media li {
+  margin-top: 20px;
+  height: 20px;
+  width: 50px;
+  display: block;
+  background-color: #3c3c3c;
+}
+
+#large-media li:hover {
+  background-color: #286090;
+}
+
+#large-media a {
+  height: 50px;
+  margin: auto;
 }
