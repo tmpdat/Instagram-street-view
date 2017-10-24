@@ -27,7 +27,7 @@ a {
 
 #divListMedias .media {
   height: 100%;
-  max-height: 140px;
+  max-height: 130px;
   width: auto;
   max-width: 190px;
   display: block;
@@ -40,6 +40,7 @@ a {
 
 #divMap {
   margin: 0;
+  padding: 0;
 }
 
 #divListMedias div:hover {
@@ -47,7 +48,7 @@ a {
 }
 
 #divListMedias div.frame {
-  height: 140px;
+  height: 130px;
   width: 190px;
   margin: 10px;
   display: block;
@@ -58,16 +59,16 @@ a {
   height: auto;
   max-height: 450px;
   width: 100%;
-  max-width: 660px;
+  max-width: 700px;
   margin: auto;
   display: block;
   margin-top: 20px;
 }
 #large-media img .d-block {
   height: auto;
-  max-height: 490px;
+  max-height: 500px;
   width: 100%;
-  max-width: 660px;
+  max-width: 700px;
   margin: auto;
   display: block;
   margin-top: 20px;
